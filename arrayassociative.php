@@ -52,9 +52,12 @@ $dataPerson = [
         <li>Kota: <?=$data ["Kota"]?></li>
         <li>Baju: <?=$data ["Baju"]?></li>
         <li>Makanan favorit:
-        <?php foreach($data["Makanan_fav"] as $makanan): ?>
+            <ol>
+            <?php foreach($data["Makanan_fav"] as $makanan): ?>
             <li><?php echo $makanan; ?></li>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+            </ol>
+        
         </li>
     </ul>
 <?php endforeach; ?>
