@@ -1,6 +1,10 @@
 <?php
 session_start();  //memulai sesi
 
+if (isset($_SESSION['username'])){
+    header("Location : dashboard.php");
+    exit();
+}
 $user = [
     'admin1' => 'password123',
     'user1' => 'password321'
@@ -15,7 +19,6 @@ if (isset($_POST['submit_login'])){
         exit();
     }else{
         $err = "Password atau username salah";
-        $err;
     }
 }
 ?>
