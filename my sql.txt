@@ -1,0 +1,34 @@
+CREATE DATABASE db_pepustakaan
+
+USE db_perpustakaan
+CREATE TABLE tb_penulis(id INT (11) PRIMARY KEY AUTO_INCREMENT NOT NULL, nama VARCHAR(200),
+
+INSERT INTO `tb_genre` (`id_genre`, `nama`) VALUES ('5', 'Mystery'); untuk menambahkan data
+
+SELECT alamat FROM tb_penerbit WHERE alamat LIKE '%minggu%'; untuk mencari specific value dari sebuah data pada table
+
+SELECT * FROM `tb_penerbit` ORDER BY `tb_penerbit`.`nama` DESC; untuk sorting value
+
+SELECT alamat, COUNT(*) as 'jumlah_penerbit' FROM `tb_penerbit` GROUP BY alamat; untuk menghitung (count)
+==========================================================================================================================================
+SELECT buku.id_buku, buku.judul, penerbit.nama as nama_penerbit, genre.nama as nama_genre, penulis.nama as nama_penulis, buku.tanggal_sewa
+
+FROM tb_buku AS buku
+
+LEFT JOIN tb_penerbit AS penerbit ON buku.penerbit = penerbit.id_penerbit
+
+LEFT JOIN tb_genre AS genre ON buku.genre = genre.id_genre
+
+LEFT JOIN tb_penulis AS penulis ON buku.penulis = penulis.id_penulis  (CONTOH MEMBUAT RELASI ANTAR TABEL)
+===========================================================================================================================================
+ALTER TABLE tb_genre RENAME TO tb_genre_buku;  untuk mengganti nama table
+
+ALTER TABLE tb_genre_buku CHANGE nama nama_kategori varchar(200); merubah nama kolom pada table
+
+ALTER TABLE tb_genre_buku ADD sub_kategori varchar (200); untuk menambahkan kolom baru
+
+ALTER TABLE tb_genre_buku DROP COLUMN sub_kategori; untuk menghapus kolom
+===========================================================================================================================================
+UPDATE tb_genre_buku SET nama_kategori = 'Edukasi' WHERE id_genre = 3; untuk update value dalam table
+
+USE db_mahasiswaCREATE TABLE tb_fakultas_mahasiswa(id INT (11) PRIMARY KEY AUTO_INCREMENT NOT NULL, nama_jurusan VARCHAR(200))tb_prodi_mahasiswa (id INT (11) PRIMARY KEY AUTO_INCREMENT NOT null, nim_mahasiswa varchar (20), nama_mahasiswa varchar (200), tahun_masuk date)tb_presensi_mahasiswa (id INT (11) PRIMARY KEY AUTO_INCREMENT NOT null, nim_mahasiswa varchar (20), nama_mahasiswa varchar (200), kehadiran datetime);
